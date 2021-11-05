@@ -35,7 +35,6 @@ def get_partners():
     random.shuffle(people)
     partners = []
     chosen = []
-    not_chosen = []
 
     for person in people:
         avail = [p for p in people if p.name !=
@@ -50,9 +49,7 @@ def get_partners():
     
     '''There are scenarios where 1 or more people will be left over,
     in this case, a list will return the names, and the method will be called again.'''
-    for i in people: 
-        if i.name not in chosen:
-            not_chosen.append(i.name)
+    not_chosen = [p for p in people if p.name not in chosen]
 
     return partners, not_chosen
 
