@@ -54,7 +54,6 @@ def get_partners():
     return partners, not_chosen
 
 
-
 if __name__ == '__main__':
     
     partners, not_chosen = get_partners()
@@ -64,8 +63,8 @@ if __name__ == '__main__':
         print('going again')
         partners, not_chosen = get_partners()
 
-    for i in partners:
-        print(i[0])
-
     assert len(partners) == 13
     assert len(not_chosen) == 0
+    
+    for i in partners:
+        print(i[0])
